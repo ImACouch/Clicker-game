@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="style.css">
+
+<div class="Titol_div">
+    <h1 class="Titol">
+        Clicker Game!
+    </h1>
+</div>
+
+<hr>
+
+<h2 class="num" id="num">
+    Clikes: 
+</h2>
+
+<h2 class="mult_" id="mult_">
+    Multipliyer:
+</h2>
+
+<button class="button" onclick = "clickee()">
+    Click Me!
+</button>
+
+<button class="mult_up_b" id="mult_up_button" onclick = "upgrade_mult()">
+    Upgrade Multiyplyer for 10 Clikes
+</button>
+
+<script>
+    var num = 0
+    var mult = 1
+    var mult_up_price = 10
+    
+    document.getElementById("num").innerHTML = "Clikes: "+num+"!";
+    document.getElementById("mult_").innerHTML = "Multipliyer: "+mult;
+
+    function update_button_backround() {
+        if (num>=mult_up_price) {
+            document.getElementById("mult_up_button").style.backgroundColor = "green";
+        }
+        else {
+            document.getElementById("mult_up_button").style.backgroundColor = "red";
+        }
+    }
+
+    function clickee() {
+        console.log("Click")
+        
+        num+=mult
+
+        
+
+        document.getElementById("num").innerHTML = "Clikes: "+num+"!";
+        document.getElementById("mult_").innerHTML = "Multipliyer: "+mult;
+
+        update_button_backround()
+    }
+
+    function upgrade_mult () {
+        if (num>=mult_up_price ) {
+            num -=mult_up_price
+            mult+=1
+            mult_up_price*=1.5
+
+            document.getElementById("num").innerHTML = "Clikes: "+num+"!";
+            document.getElementById("mult_").innerHTML = "Multipliyer: "+mult;
+            document.getElementById("mult_up_button").innerHTML = "Upgrade Multiyplyer for "+mult_up_price+ " Clikes";
+
+            update_button_backround()
+        }
+        
+
+    }
+
+    //save stuff
+    const button = document.querySelector('.button');
+    const button2 = document.querySelector('.mult_up_b');
+
+    const saveToLocalStorage = () => {
+        localStorage.setItem('Clikes', num)
+
+        localStorage.setItem('mult', mult)
+
+        localStorage.setItem('mult_up_price', mult_up_price)
+
+        lode()
+    }
+
+    function lode () {
+        const storageinpute_num = localStorage.getItem('Clikes')
+        const storageinpute_mult = localStorage.getItem('mult')
+        const storageinpute_mult_up_price = localStorage.getItem('mult_up_price')
+        if (storageinpute_num) {
+            num = parseInt(storageinpute_num)
+        }
+
+        if (storageinpute_mult) {
+            mult = parseInt(storageinpute_mult)
+        }
+
+        if (storageinpute_mult_up_price) {
+            mult_up_price = parseInt(storageinpute_mult_up_price)
+        }
+
+        document.getElementById("num").innerHTML = "Clikes: "+num+"!";
+        document.getElementById("mult_").innerHTML = "Multipliyer: "+mult;
+        document.getElementById("mult_up_button").innerHTML = "Upgrade Multiyplyer for "+mult_up_price+ " Clikes";
+        
+
+
+
+        
+    }
+    
+    button.addEventListener('click', saveToLocalStorage)
+    button2.addEventListener('click', saveToLocalStorage)
+
+    lode()
+
+    update_button_backround()
+</script>
+
+<!-- <input class="storage">
+<p class="text">Text</p>
+<button class="button">
+    Save
+</button>
+
+<script src="main.js">
+
+</script>
+--> 
+
