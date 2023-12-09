@@ -4,7 +4,7 @@ var num = 0
     var CPS = 0
     var CPS_up_price = 20
     var reberths = 0
-    var reberth_prise = 1
+    var reberth_prise = 500
     
     document.getElementById("num").innerHTML = "Clikes: "+num+"!";
     document.getElementById("mult_").innerHTML = "Multipliyer: "+mult;
