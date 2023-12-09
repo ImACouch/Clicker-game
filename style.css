@@ -69,6 +69,14 @@ hr {
     color: orange;
 }
 
+.CPS_ {
+    text-align: center;
+    font-size: 5vw;
+    height: 1vw;
+    margin-top: 0;
+    color: orange;
+}
+
 .mult_up_b {
     text-align: center;
     font-size: 4vw;
@@ -79,9 +87,57 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    margin-top: 35vw;
+    margin-top: 40vw;
 
     background-color: red;
     border-radius: 30px;
     border-width: 20px;
+}
+
+.Add_clicker {
+    text-align: center;
+    font-size: 4vw;
+    margin-top: 60px;
+    color: rgb(0, 0, 0);
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -75%);
+
+    margin-top: 60vw;
+
+    background-color: red;
+    border-radius: 30px;
+    border-width: 20px;
+}
+
+.Reset {
+    background-color: red;
+    color: white;
+}
+
+.Reberth {
+    text-align: center;
+    font-size: 4vw;
+    margin-top: 60px;
+    color: rgb(0, 0, 0);
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -75%);
+
+    margin-top: 80vw;
+
+    background-color:  "gray";
+    border-radius: 30px;
+    border-width: 20px;
+    opacity: 0.5;
+}
+
+.Reberths {
+    text-align: center;
+    font-size: 3.4vw;
+    height: 1vw;
+    margin-top: 1vw;
+    color:  purple;
 }
